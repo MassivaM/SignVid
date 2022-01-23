@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import Title from "./components/Title.js";
 import leftwave from "./assets/left-wave.svg";
 import rightwave from "./assets/right-wave.svg";
-import Dropzone from "./components/Dropzone.js";
+import Dropzone from "./components/MyUploader.js";
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
