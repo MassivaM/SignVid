@@ -1,0 +1,14 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  background-color: "#F1F1F1";
+}
+body > #root > div {
+  height: 100vh;
+}
