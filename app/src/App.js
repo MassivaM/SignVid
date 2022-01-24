@@ -8,11 +8,20 @@ import leftwave from "./assets/left-wave.svg";
 import rightwave from "./assets/right-wave.svg";
 import Dropzone from "./components/MyUploader.js";
 import UploadDone from "./components/UploadDone.js";
+import SmallTitle from "./components/SmallTitle.js";
+import React, { useState } from "react";
+
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
 }));
 export default function App() {
+  const [uploaded, setUploaded] = useState(false);
+
+  function UploadComplete() {
+    setUploaded(true);
+  }
+
   return (
     <Grid container spacing={0}>
       <Grid xs={3}>
@@ -28,11 +37,9 @@ export default function App() {
           alignItems="center"
           spacing={0}
         >
-          <Grid xs={6}>
-            <Title />
-          </Grid>
+          <Grid xs={6}>{uploaded == false ? <Title /> : <SmallTitle />}</Grid>
           <Grid xs={12}>
-            <UploadDone />
+            <Dropzone uploaded={uploaded} UploadComplete={UploadComplete} />
           </Grid>
           <Grid xs={6}></Grid>
         </Grid>
