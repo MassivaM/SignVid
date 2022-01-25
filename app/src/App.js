@@ -6,11 +6,11 @@ import Grid from "@mui/material/Grid";
 import Title from "./components/Title.js";
 import leftwave from "./assets/left-wave.svg";
 import rightwave from "./assets/right-wave.svg";
-import Dropzone from "./components/MyUploader.js";
 import UploadDone from "./components/UploadDone.js";
 import SmallTitle from "./components/SmallTitle.js";
 import React, { useState } from "react";
-
+import Test from "./components/Test.js";
+import Cloudinary from "./components/Cloudinary.js";
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
@@ -39,7 +39,7 @@ export default function App() {
         >
           <Grid xs={6}>{uploaded == false ? <Title /> : <SmallTitle />}</Grid>
           <Grid xs={12}>
-            <Dropzone uploaded={uploaded} UploadComplete={UploadComplete} />
+            <Cloudinary UploadComplete={UploadComplete} uploaded={uploaded} />
           </Grid>
           <Grid xs={6}></Grid>
         </Grid>

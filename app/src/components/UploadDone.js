@@ -6,8 +6,9 @@ import * as yup from "yup";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Formik, Field, Form } from "formik";
+import React, { useState, useEffect } from "react";
 import "../scss/UploadDone.scss";
-export default function UploadDone({ video }) {
+export default function UploadDone({ url }) {
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -18,11 +19,19 @@ export default function UploadDone({ video }) {
       alert(JSON.stringify(values, null, 2));
     },
   });
-
+  useEffect(() => {
+    console.log(url);
+  }, []);
   return (
     <div style={{ alignContent: "center", justifyContent: "center" }}>
-      <video width="500" height="300" style={{ paddingLeft: "0%" }} controls>
-        <source src={video} type="video/mp4" />
+      <video
+        width="500"
+        height="300"
+        style={{ paddingLeft: "0%" }}
+        controls
+        key={url}
+      >
+        <source src={url} type="video/mp4" />
         Your browser does not support HTML video.
       </video>
       <Formik
