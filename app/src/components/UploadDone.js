@@ -17,8 +17,12 @@ export default function UploadDone({ url }) {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      sign(url, values.fullName, values.location, values.publication);
     },
   });
+
+  function sign(url, fullName, location, publication) {}
+
   useEffect(() => {
     console.log(url);
   }, []);
@@ -55,7 +59,7 @@ export default function UploadDone({ url }) {
               width: 500,
               height: 30,
               borderColor: "#2872fb",
-              borderRadius: "5px",
+              borderRadius: "15px",
               marginTop: "5%",
               marginBottom: "5%",
               fontFamily: "Sintony",
@@ -71,7 +75,7 @@ export default function UploadDone({ url }) {
               width: 500,
               height: 30,
               borderColor: "#2872fb",
-              borderRadius: "5px",
+              borderRadius: "15px",
               marginTop: "2%",
               marginBottom: "2%",
               fontFamily: "Sintony",
@@ -88,11 +92,12 @@ export default function UploadDone({ url }) {
               width: 500,
               height: 30,
               borderColor: "#2872fb",
-              borderRadius: "5px",
+              borderRadius: "15px",
               marginTop: "5%",
               marginBottom: "5%",
               fontFamily: "Sintony",
               fontSize: "1em",
+              borderShadow: "none",
             }}
           />
           <br></br>
