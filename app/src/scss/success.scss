@@ -1,0 +1,75 @@
+.subtitle2 {
+  text-align: center;
+  font-family: Sintony;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.6em;
+
+  padding: 0;
+  margin: 0;
+}
+.title3 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3.5em;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  color: transparent;
+  text-align: center;
+  padding-top: 40%;
+  padding-bottom: 10%;
+  margin: 0;
+}
+.img {
+  height: 35vh;
+  width: 12vw;
+  padding: 0;
+  margin: 0;
+}
+@media only screen and (min-width: 1500px) {
+  .img {
+    height: 35vh;
+    width: 10vw;
+    padding: 0;
+    margin: 0;
+  }
+}
+.button3 {
+  background-color: #2872fb;
+  border: 3px solid black;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.698) inset,
+    0 1px 0 0 rgba(0, 0, 0, 0.075);
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Sintony;
+  font-weight: bold;
+  font-size: 0.8em;
+  line-height: 20px;
+  margin: 0;
+  padding: 8px 50px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease 0s;
+  vertical-align: middle;
+  align-self: center;
+  margin-left: 10%;
+}
+.button3:hover {
+  background-color: #f6f6f6;
+  color: black;
+  outline: medium none;
+}
+.button3:focus {
+  outline: medium none;
+}
+.button3:active,
+.button3.active {
+  background-color: #dddddd;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075) inset;
+  outline: medium none;
+  transition: none 0s ease 0s;
+}

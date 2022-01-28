@@ -6,9 +6,19 @@ import * as yup from "yup";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Formik, Field, Form } from "formik";
+
 import React, { useState, useEffect } from "react";
+import SuccesModal from "./Success-Modal.js";
+import download from "js-file-download";
 import "../scss/UploadDone.scss";
+
 export default function UploadDone({ url }) {
+  const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const handleLoading = () => setLoading(true);
+  const stopLoading = () => setLoading(false);
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -17,17 +27,13 @@ export default function UploadDone({ url }) {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      sign(url, values.fullName, values.location, values.publication);
     },
   });
 
-  function sign(url, fullName, location, publication) {}
-
-  useEffect(() => {
-    console.log(url);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div style={{ alignContent: "center", justifyContent: "center" }}>
+      {open && <SuccesModal />}
       <video
         width="500"
         height="300"
@@ -45,8 +51,25 @@ export default function UploadDone({ url }) {
           publication: "",
         }}
         onSubmit={async (values) => {
+          handleLoading();
           await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
+
+          fetch("http://localhost:5000/sign", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              url: url,
+              fullName: values.fullName,
+              location: values.location,
+              publication: values.publication,
+            }),
+          });
+
+          await new Promise((r) => setTimeout(r, 35000));
+          stopLoading();
+          handleOpen();
         }}
       >
         <Form>
@@ -102,7 +125,7 @@ export default function UploadDone({ url }) {
           />
           <br></br>
           <button type="submit" className="btn">
-            SIGN
+            {loading ? <div className="loader"></div> : <div>SIGN</div>}
           </button>
         </Form>
       </Formik>
