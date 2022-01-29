@@ -25,8 +25,8 @@ SignVid is ReactJS/Node web app that allows creators to edit the metadata of the
 The design file for this project is [here](https://www.figma.com/file/rYww3hPWBX6OH2lBFFgHET/Sign-your-video?node-id=0%3A1)
 
 ## Frontend 💻
-The frontend is built in ReactJS with the help of Material-UI to ensure homogeinity in the design.
-The first page simply takes in a file & uploads it to a Cloudinary media library which returns a URL of the video this facilitates the handling of the files down the line
+The frontend is built in ReactJS with the help of Material-UI to ensure homogeneity in the design and facilitate responsiveness.
+The first page simply takes in a file & uploads it to a Cloudinary media library which returns a URL of the video,  this facilitates the handling of the files down the line
 ![image](https://user-images.githubusercontent.com/35381715/151640753-bcc5b6f2-41d0-46af-b9b3-6df3711573be.png)
 
 The second page shows the video that was uploaded and allows the user to input the information they'd like to add using a Formik form
