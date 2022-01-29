@@ -1,6 +1,6 @@
 # SignVid
 
-SignVid is ReactJS/Node web app that allows creators to edit the metadata of their video 
+SignVid is ReactJS/Node web app that allows creators to edit the metadata of their video & hash it to save its current state
 
 # To run the backend
 ### `cd backend`
