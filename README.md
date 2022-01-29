@@ -33,7 +33,7 @@ The second page shows the video that was uploaded and allows the user to input t
 ![image](https://user-images.githubusercontent.com/35381715/151641443-ce7e3b1f-c2c5-4420-8ab8-5b0a40a78622.png)
 
 
-##Backend 🧠
+## Backend 🧠
 The backend is built with NodeJS and Express and uses the fmmpeg library to edit the metadata 
 Once the changes have been made to the video file it is hashed using SHA-256 and the value returned is stored as its filename , this hash can be used as evidence that the file has been tampered with in the future , if any changes are made to the video it will return a completely different hash once passed through SHA-256 once again
 
